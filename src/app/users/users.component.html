@@ -1,0 +1,9 @@
+<div id="listUsers"><h2>List all Users</h2></div>
+<button routerLink="../user/add" class="userAdd">+</button>
+<ul>
+  <li class="text" *ngFor="let user of users">
+    <span>{{user.name}}</span>
+    <button (click)="deleteUser()" class="delete">Delete</button>
+  </li>
+</ul>
+
