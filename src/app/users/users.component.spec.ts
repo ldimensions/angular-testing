@@ -77,6 +77,13 @@ describe('UsersComponent', () => {
       expect(el.length).toBe(1);
     });
 
+    it('Should show the 1 delete button per user', () => {
+      userServiceMock.getUsers.and.returnValue(helper.getUsers(1));
+      fixture.detectChanges();
+      let el = fixture.debugElement.queryAll(By.css('.delete'));
+      expect(el.length).toBe(1);
+    });
+
   });
 
   describe('Delete User', () => {
@@ -104,9 +111,9 @@ describe('UsersComponent', () => {
     // fixture.detectChanges();
     // expect(onClickMock).toHaveBeenCalled();
 
-  });
+    });
 
-});
+  });
 
 });
 
